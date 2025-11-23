@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/style.css';
-// import aboutImage from '../assets/images/about-image.png'; // Placeholder
-const aboutImage = "https://placehold.co/400x400/D4C76A/white?text=About+Image";
+import aboutImage from '../assets/images/about-cse.png';
 
 const About = () => {
     return (
