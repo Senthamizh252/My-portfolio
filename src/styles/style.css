@@ -446,3 +446,20 @@ button {
         width: 100%;
     }
 }
+
+/* Cursor Effect */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    margin-left: -6px;
+    /* Center the dot */
+    margin-top: -6px;
+    box-shadow: 0 0 10px var(--primary-color);
+}
