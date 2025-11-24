@@ -8,7 +8,7 @@ const Contact = () => {
                 <h2 className="section-title">CONTACT</h2>
                 <p>Feel free to reach out to me for any inquiries or collaborations.</p>
                 <div className="contact-links">
-                    <a href="mailto:example@email.com" className="btn-contact">Email Me</a>
+                    <a href="mailto:senthamizh252@email.com" className="btn-contact">Email Me</a>
                     {/* Add more social links if needed */}
                 </div>
             </div>

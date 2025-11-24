@@ -15,7 +15,7 @@ const About = () => {
                 <div className="about-text">
                     <h2 className="about-title-desktop">ABOUT</h2>
                     <p>
-                        Hi, I’m Senthamizh, a 2nd-year CSE student passionate about <strong>data analytics</strong>, problem-solving, and design. I enjoy finding patterns in data and turning them into meaningful insights. I use tools like <strong>Figma, Canva, and Cursor</strong> while building my skills in programming, data analysis, and visualization. I love exploring new tools, UI trends, and ideas that help me grow in tech and analytics.
+                        Hi, I’m Senthamizh, a 2nd-year CSE student passionate about <strong>data analytics</strong>, problem-solving, and design. I enjoy finding patterns in data and turning them into meaningful insights. I use tools like <strong>Figma, Canva, Anti-Gravity and Cursor</strong> while building my skills in programming, data analysis, and visualization. I love exploring new tools, UI trends, and ideas that help me grow in tech and analytics.
                     </p>
                 </div>
             </div>
