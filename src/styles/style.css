@@ -661,6 +661,7 @@ button {
     border: none;
 }
 
+
 .project-card.gold .btn-download {
     border-color: #000;
     color: #000;
@@ -669,4 +670,149 @@ button {
 .project-card.gold .btn-download:hover {
     background-color: #000;
     color: #cfb53b;
+}
+/* Contact Section Updates */
+.section-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 30% 58%;
+    gap: 12%;
+    width: 100%;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-option {
+    background: #2c2c6c;
+    /* Dark blue/purple from image */
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition-speed);
+}
+
+.contact-option:hover {
+    background: transparent;
+    border-color: var(--primary-color);
+}
+
+.contact-option-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.contact-option h4 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.contact-option h5 {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.8rem;
+    word-break: break-all;
+}
+
+.contact-option a {
+    font-size: 0.8rem;
+    color: #4db5ff;
+    /* Light blue link color */
+    display: inline-block;
+}
+
+.contact-option a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border: 2px solid #2c2c6c;
+    resize: none;
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4db5ff;
+    outline: none;
+}
+
+.btn.btn-primary {
+    width: max-content;
+    display: inline-block;
+    color: #1f1f38;
+    background: #4db5ff;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid #4db5ff;
+    transition: var(--transition-speed);
+    font-weight: 500;
+}
+
+.btn.btn-primary:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Responsive for Contact */
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-options {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .contact-option {
+        width: 300px;
+        /* Fixed width for card on tablet/desktop if row */
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-options {
+        flex-direction: column;
+    }
+
+    .contact-option {
+        width: 100%;
+    }
 }
