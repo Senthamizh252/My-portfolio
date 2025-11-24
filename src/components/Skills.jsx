@@ -1,5 +1,25 @@
 import React from 'react';
 import '../styles/style.css';
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
+const SkillItem = ({ skill, index }) => {
+    const { elementRef, isVisible } = useScrollAnimation();
+    const delayClass = `delay-${Math.min((index + 1) * 100, 600)}`;
+
+    return (
+        <div
+            className={`skill-item fade-up ${delayClass} ${isVisible ? 'show' : ''}`}
+            ref={elementRef}
+        >
+            <div className="skill-name">{skill.name}</div>
+            <div className="skill-bar-container">
+                <div className="skill-bar" style={{ width: skill.percentage }}>
+                    <span className="skill-percentage">{skill.percentage}</span>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const Skills = () => {
     const skills = [
@@ -15,14 +35,7 @@ const Skills = () => {
                 <h2 className="section-title">SKILLS</h2>
                 <div className="skills-list">
                     {skills.map((skill, index) => (
-                        <div className="skill-item" key={index}>
-                            <div className="skill-name">{skill.name}</div>
-                            <div className="skill-bar-container">
-                                <div className="skill-bar" style={{ width: skill.percentage }}>
-                                    <span className="skill-percentage">{skill.percentage}</span>
-                                </div>
-                            </div>
-                        </div>
+                        <SkillItem key={index} skill={skill} index={index} />
                     ))}
                 </div>
             </div>

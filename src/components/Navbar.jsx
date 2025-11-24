@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/style.css';
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container navbar-container">
                 <div className="logo">
-                    <a href="#">~~Senthamizh~~</a>
+                    <Link to="/">~~Senthamizh~~</Link>
                 </div>
                 <div className="menu-icon" onClick={toggleMenu}>
                     <div className={isOpen ? "bar open" : "bar"}></div>
@@ -20,11 +21,12 @@ const Navbar = () => {
                     <div className={isOpen ? "bar open" : "bar"}></div>
                 </div>
                 <ul className={isOpen ? "nav-links active" : "nav-links"}>
-                    <li><a href="#home" onClick={toggleMenu}>HOME</a></li>
-                    <li><a href="#about" onClick={toggleMenu}>ABOUT</a></li>
-                    <li><a href="#skills" onClick={toggleMenu}>SKILLS</a></li>
-                    <li><a href="#projects" onClick={toggleMenu}>PROJECTS</a></li>
-                    <li><a href="#contact" onClick={toggleMenu}>CONTACT</a></li>
+                    <li><Link to="/" onClick={toggleMenu}>HOME</Link></li>
+                    <li><Link to="/about" onClick={toggleMenu}>ABOUT</Link></li>
+                    <li><Link to="/skills" onClick={toggleMenu}>SKILLS</Link></li>
+                    <li><Link to="/projects" onClick={toggleMenu}>PROJECTS</Link></li>
+                    <li><Link to="/certificate" onClick={toggleMenu}>CERTIFICATE</Link></li>
+                    <li><Link to="/contact" onClick={toggleMenu}>CONTACT</Link></li>
                 </ul>
             </div>
         </nav>

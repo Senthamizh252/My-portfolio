@@ -1,0 +1,47 @@
+export const projectsData = [
+    {
+        id: "healon",
+        title: "HEALON",
+        description: "Heal-On bridges the rural healthcare gap with AI-driven health assessments, virtual doctor support, and real-time medicine availability.",
+        fullDescription: "Heal-On is a comprehensive healthcare platform designed to address the disparity in medical access for rural areas. It leverages AI to provide initial health assessments, connects patients with doctors virtually, and ensures medicines are available in real-time.",
+        technologies: ["React", "Node.js", "AI/ML", "MongoDB"],
+        variant: "gold",
+        buttonText: "DOWNLOAD"
+    },
+    {
+        id: "routemate",
+        title: "ROUTEMATE",
+        description: "Routemate delivers instant bus tracking with live location, driver-conductor info, accurate arrivals, and delay notifications.",
+        fullDescription: "Routemate is a smart public transport companion that provides real-time tracking of buses. It offers features like live location sharing, driver and conductor details, and accurate arrival time predictions to help commuters plan their journeys better.",
+        technologies: ["Flutter", "Firebase", "Google Maps API"],
+        variant: "gold",
+        buttonText: "DOWNLOAD"
+    },
+    {
+        id: "skillconnect",
+        title: "SKILLCONNECT",
+        description: "Advanced job filters enable precise matching by skill, location, pay range, experience, availability, and verified status.",
+        fullDescription: "SkillConnect is a job portal that focuses on precise matching between job seekers and employers. It uses advanced filters for skills, location, and experience to ensure the best fit for both parties.",
+        technologies: ["React", "Express", "PostgreSQL"],
+        variant: "default",
+        buttonText: "Get Started"
+    },
+    {
+        id: "fashionista",
+        title: "FASHIONISTA",
+        description: "Empowering every individual to design clothing that truly fits their identity. Connecting creators and boutiques through a trusted, scalable custom-fashion ecosystem.",
+        fullDescription: "Fashionista is a custom fashion platform that allows users to design their own clothing. It connects independent creators and boutiques, fostering a scalable ecosystem for custom fashion.",
+        technologies: ["Vue.js", "Django", "Stripe API"],
+        variant: "default",
+        buttonText: "DOWNLOAD"
+    },
+    {
+        id: "productivity-tracker",
+        title: "PRODUCTIVITY TRACKER",
+        description: "A simple tool that predicts student productivity based on mood, study time, and distractions.",
+        fullDescription: "The Productivity Tracker is an analytical tool for students. By inputting data on mood, study duration, and distractions, it uses predictive algorithms to estimate productivity levels and suggest improvements.",
+        technologies: ["Python", "Pandas", "Scikit-learn"],
+        variant: "gold",
+        buttonText: "DOWNLOAD"
+    }
+];

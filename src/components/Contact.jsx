@@ -1,10 +1,13 @@
 import React from 'react';
 import '../styles/style.css';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Contact = () => {
+    const { elementRef, isVisible } = useScrollAnimation();
+
     return (
         <section id="contact" className="contact">
-            <div className="container">
+            <div className={`container fade-up ${isVisible ? 'show' : ''}`} ref={elementRef}>
                 <h5 className="section-subtitle">Get In Touch</h5>
                 <h2 className="section-title">Contact Me</h2>
                 <p className="section-description">I do receive your messages and will respond asap if the valid email is provided :)</p>
