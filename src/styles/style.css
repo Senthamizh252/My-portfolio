@@ -652,3 +652,21 @@ button {
     z-index: -1;
     pointer-events: none;
 }
+
+/* Gold Project Card Variant */
+.project-card.gold {
+    background-color: #cfb53b;
+    /* Gold color */
+    color: #000;
+    border: none;
+}
+
+.project-card.gold .btn-download {
+    border-color: #000;
+    color: #000;
+}
+
+.project-card.gold .btn-download:hover {
+    background-color: #000;
+    color: #cfb53b;
+}
