@@ -11,11 +11,13 @@ const SkillItem = ({ skill, index }) => {
             className={`skill-item fade-up ${delayClass} ${isVisible ? 'show' : ''}`}
             ref={elementRef}
         >
-            <div className="skill-name">{skill.name}</div>
+            <div className="skill-name">
+                {skill.logos.map((logo, i) => (
+                    <img key={i} src={logo} alt="skill logo" className="skill-logo" />
+                ))}
+            </div>
             <div className="skill-bar-container">
-                <div className="skill-bar" style={{ width: skill.percentage }}>
-                    <span className="skill-percentage">{skill.percentage}</span>
-                </div>
+                <div className="skill-bar" style={{ width: skill.percentage }}></div>
             </div>
         </div>
     );
@@ -23,16 +25,34 @@ const SkillItem = ({ skill, index }) => {
 
 const Skills = () => {
     const skills = [
-        { name: 'HTML/CSS', percentage: '95%' },
-        { name: 'REACT.js', percentage: '45%' },
-        { name: 'PYTHON', percentage: '55%' },
-        { name: 'JAVA', percentage: '35%' },
+        {
+            name: 'HTML/CSS',
+            logos: [
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+            ],
+            percentage: '95%'
+        },
+        {
+            name: 'REACT.js',
+            logos: ['https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'],
+            percentage: '45%'
+        },
+        {
+            name: 'PYTHON',
+            logos: ['https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'],
+            percentage: '55%'
+        },
+        {
+            name: 'JAVA',
+            logos: ['https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'],
+            percentage: '35%'
+        },
     ];
 
     return (
         <section id="skills" className="skills">
             <div className="container">
-                <h2 className="section-title">SKILLS</h2>
                 <div className="skills-list">
                     {skills.map((skill, index) => (
                         <SkillItem key={index} skill={skill} index={index} />
