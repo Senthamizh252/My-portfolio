@@ -1,5 +1,4 @@
 import heroImage from '../assets/images/Senthamizh.jpg';
-import resume from '../assets/resume.pdf';
 
 const Hero = () => {
     return (
@@ -15,7 +14,6 @@ const Hero = () => {
                 <div className="hero-text">
                     <h1>Hi, I am <span className="script-text">Senthamizh</span></h1>
                     <p>I am interested in data analysis — uncovering stories that matter.</p>
-                    <a href={resume} className="btn-download">Download Resume</a>
                 </div>
             </div>
         </section>
