@@ -13,7 +13,9 @@ const Hero = () => {
                 </div>
                 <div className="hero-text">
                     <h1>Hi, I am <span className="script-text">Senthamizh</span></h1>
-                    <p>I am interested in data analysis — uncovering stories that matter.</p>
+                    <p>
+                        A 2nd-year CSE student passionate about <strong>data analytics</strong>, problem-solving, and design. I enjoy finding patterns in data and turning them into meaningful insights. I use tools like <strong>Figma, Canva, Anti-Gravity and Cursor</strong> while building my skills in programming, data analysis, and visualization. I love exploring new tools, UI trends, and ideas that help me grow in tech and analytics.
+                    </p>
                 </div>
             </div>
         </section>
