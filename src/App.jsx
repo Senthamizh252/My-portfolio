@@ -8,7 +8,6 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import ProjectDetails from './components/ProjectDetails';
 import Certificate from './components/Certificate';
-import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SpaceBackground from './components/SpaceBackground';
@@ -33,7 +32,6 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:projectId" element={<ProjectDetails />} />
             <Route path="/certificate" element={<Certificate />} />
-            <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
