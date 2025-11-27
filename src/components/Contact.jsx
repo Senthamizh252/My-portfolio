@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/style.css';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const { elementRef, isVisible } = useScrollAnimation();
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        console.log('Form data:', form.current);
+
+        emailjs.sendForm(
+            'service_n445yzt',
+            'template_68bbsui',
+            form.current,
+            'oUy1kS6eV1QsjyrQ7'
+        ).then(
+            (result) => {
+                console.log('EmailJS response:', result);
+                alert('Message sent successfully!');
+                e.target.reset();
+            },
+            (error) => {
+                console.error('EmailJS error:', error);
+                alert(`Failed to send the message: ${error.text || error.message || 'Unknown error'}`);
+            }
+        );
+    };
 
     return (
         <section id="contact" className="contact">
@@ -24,7 +49,7 @@ const Contact = () => {
                         </article>
                     </div>
 
-                    <form className="contact-form">
+                    <form ref={form} onSubmit={sendEmail} className="contact-form">
                         <input type="text" name="name" placeholder="Your Full Name" required />
                         <input type="email" name="email" placeholder="Your Email" required />
                         <textarea name="message" rows="7" placeholder="Your message" required></textarea>
