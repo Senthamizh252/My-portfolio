@@ -7,25 +7,8 @@ const Contact = () => {
     const { elementRef, isVisible } = useScrollAnimation();
     const form = useRef();
 
-    const sendToGoogleSheets = (formData) => {
-        // Replace this URL with your Google Apps Script Web App URL
-        const scriptURL = "YOUR_GOOGLE_SHEET_SCRIPT_URL";
-
-        if (scriptURL === "YOUR_GOOGLE_SHEET_SCRIPT_URL") {
-            console.warn("Please set the Google Sheet Script URL in Contact.jsx");
-            return;
-        }
-
-        fetch(scriptURL, { method: 'POST', body: formData })
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message));
-    };
-
     const sendEmail = (e) => {
         e.preventDefault();
-
-        const formData = new FormData(form.current);
-        formData.append('time', new Date().toLocaleString());
 
         console.log('Form data:', form.current);
 
@@ -37,7 +20,6 @@ const Contact = () => {
         ).then(
             (result) => {
                 console.log('EmailJS response:', result);
-                sendToGoogleSheets(formData);
                 alert('Message sent successfully!');
                 e.target.reset();
             },
