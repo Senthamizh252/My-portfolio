@@ -98,7 +98,7 @@ const SpaceBackground = () => {
         const stars = [];
         const initStars = () => {
             stars.length = 0;
-            const numberOfStars = (canvas.width * canvas.height) / 8000; // Density
+            const numberOfStars = (canvas.width * canvas.height) / 3000; // Increased Density
             for (let i = 0; i < numberOfStars; i++) {
                 stars.push(new Star());
             }
