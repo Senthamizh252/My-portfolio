@@ -6,7 +6,8 @@ export const projectsData = [
         fullDescription: "Heal-On is a comprehensive healthcare platform designed to address the disparity in medical access for rural areas. It leverages AI to provide initial health assessments, connects patients with doctors virtually, and ensures medicines are available in real-time.",
         technologies: ["React", "Node.js", "AI/ML", "MongoDB"],
         variant: "gold",
-        buttonText: "DOWNLOAD"
+        buttonText: "DOWNLOAD",
+        githubLink: "https://www.figma.com/make/ivtwLMqlMSc092WPS2Iaez/Telemedicine-App-Design?node-id=0-4&t=mYmPpBzTQ7tl9njt-1"
     },
     {
         id: "routemate",
@@ -24,7 +25,8 @@ export const projectsData = [
         fullDescription: "SkillConnect is a job portal that focuses on precise matching between job seekers and employers. It uses advanced filters for skills, location, and experience to ensure the best fit for both parties.",
         technologies: ["React", "Express", "PostgreSQL"],
         variant: "default",
-        buttonText: "Get Started"
+        buttonText: "Get Started",
+        githubLink: "https://github.com/Senthamizh252/skill-connect.git"
     },
     {
         id: "fashionista",
@@ -42,6 +44,7 @@ export const projectsData = [
         fullDescription: "The Productivity Tracker is an analytical tool for students. By inputting data on mood, study duration, and distractions, it uses predictive algorithms to estimate productivity levels and suggest improvements.",
         technologies: ["Python", "Pandas", "Scikit-learn"],
         variant: "gold",
-        buttonText: "DOWNLOAD"
+        buttonText: "DOWNLOAD",
+        githubLink: "https://github.com/Senthamizh252/student-productivity-tracker.git"
     }
 ];

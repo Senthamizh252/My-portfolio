@@ -231,40 +231,57 @@ body {
 /* Projects Section */
 .projects-grid {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .project-card {
-    background-color: var(--card-bg);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-height: auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(30, 41, 59, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
+    transform: translateY(-10px);
 }
 
-.project-card h3 {
-    margin-bottom: 20px;
+.project-logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
-.project-card p {
-    margin-bottom: 30px;
-    font-weight: 500;
+.project-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.btn-github {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4db5ff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-github:hover {
+    background-color: #1f1f38;
 }
 
 /* Contact Section */
@@ -849,4 +866,56 @@ body {
         padding: 12px 20px;
         font-size: 0.9rem;
     }
+}
+
+/* Certificate Section */
+.certificate {
+    padding: 120px 0;
+    min-height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.certificate-content p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.btn-certificate {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 2px solid #8a2be2;
+    /* Purple border */
+    color: #8a2be2;
+    /* Purple text */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    /* Rounded button */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-certificate:hover {
+    background-color: #8a2be2;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    transform: translateY(-3px);
 }
