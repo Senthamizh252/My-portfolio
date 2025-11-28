@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const SpaceBackground = () => {
+const SpaceBackground = ({ theme }) => {
     const canvasRef = useRef(null);
     const mouse = useRef({ x: null, y: null });
 
@@ -37,7 +37,14 @@ const SpaceBackground = () => {
                 this.size = Math.random() * 2;
                 this.speedX = (Math.random() - 0.5) * 0.5;
                 this.speedY = (Math.random() - 0.5) * 0.5;
-                this.color = Math.random() > 0.8 ? '#FFD700' : '#ffffff'; // 20% Gold, 80% White
+
+                // Theme-based colors
+                if (theme === 'light') {
+                    this.color = Math.random() > 0.8 ? '#FFD700' : '#000000'; // Yellow & Black
+                } else {
+                    this.color = Math.random() > 0.8 ? '#FFD700' : '#ffffff'; // Gold & White
+                }
+
                 this.opacity = Math.random();
             }
 
@@ -123,7 +130,7 @@ const SpaceBackground = () => {
             window.removeEventListener('mouseleave', handleMouseLeave);
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [theme]);
 
     return <canvas ref={canvasRef} id="space-canvas" />;
 };

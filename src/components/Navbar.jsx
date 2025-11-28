@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import '../styles/style.css';
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
+const Navbar = ({ theme, toggleTheme }) => {
     return (
         <nav className="navbar">
             <div className="container navbar-container">
                 <div className="logo">
                     <Link to="/">~~Senthamizh~~</Link>
                 </div>
-                <div className="menu-icon" onClick={toggleMenu}>
-                    <div className={isOpen ? "bar open" : "bar"}></div>
-                    <div className={isOpen ? "bar open" : "bar"}></div>
-                    <div className={isOpen ? "bar open" : "bar"}></div>
-                </div>
-                <ul className={isOpen ? "nav-links active" : "nav-links"}>
-                    <li><Link to="/" onClick={toggleMenu}>HOME</Link></li>
-                    <li><Link to="/education" onClick={toggleMenu}>EDUCATION</Link></li>
-                    <li><Link to="/skills" onClick={toggleMenu}>SKILLS</Link></li>
-                    <li><Link to="/projects" onClick={toggleMenu}>PROJECTS</Link></li>
-                    <li><Link to="/certificate" onClick={toggleMenu}>CERTIFICATE</Link></li>
-                    <li><Link to="/contact" onClick={toggleMenu}>CONTACT</Link></li>
+                <ul className="nav-links">
+                    <li><NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')}>HOME</NavLink></li>
+                    <li><NavLink to="/education" className={({ isActive }) => (isActive ? 'active' : '')}>EDUCATION</NavLink></li>
+                    <li><NavLink to="/skills" className={({ isActive }) => (isActive ? 'active' : '')}>SKILLS</NavLink></li>
+                    <li><NavLink to="/projects" className={({ isActive }) => (isActive ? 'active' : '')}>PROJECTS</NavLink></li>
+                    <li><NavLink to="/certificate" className={({ isActive }) => (isActive ? 'active' : '')}>CERTIFICATE</NavLink></li>
+                    <li><NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>CONTACT</NavLink></li>
                 </ul>
             </div>
         </nav>

@@ -16,6 +16,7 @@ export const projectsData = [
         fullDescription: "Routemate is a smart public transport companion that provides real-time tracking of buses. It offers features like live location sharing, driver and conductor details, and accurate arrival time predictions to help commuters plan their journeys better.",
         technologies: ["Flutter", "Firebase", "Google Maps API"],
         variant: "gold",
+        driveLink: "https://drive.google.com/file/d/1b09sDzLKU8bUfUnHxcsVmFUORmkvinXQ/view?usp=drivesdk",
         buttonText: "DOWNLOAD"
     },
     {
@@ -35,6 +36,7 @@ export const projectsData = [
         fullDescription: "Fashionista is a custom fashion platform that allows users to design their own clothing. It connects independent creators and boutiques, fostering a scalable ecosystem for custom fashion.",
         technologies: ["Vue.js", "Django", "Stripe API"],
         variant: "default",
+        driveLink: "https://drive.google.com/file/d/16ar9Ou3rVO3vVXnY7Cily-0T7sxkRh0i/view?usp=drivesdk",
         buttonText: "DOWNLOAD"
     },
     {

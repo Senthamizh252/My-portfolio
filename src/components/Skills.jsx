@@ -9,6 +9,10 @@ import pythonLogo from '../assets/images/python-logo.png';
 import javaLogo from '../assets/images/java-logo.png';
 import chromeLogo from '../assets/images/chrome-logo.png';
 import vscodeLogo from '../assets/images/vscode-logo.png';
+import figmaLogo from '../assets/images/figma-logo.png';
+import cursorLogo from '../assets/images/cursor-logo.png';
+import antigravityLogo from '../assets/images/antigravity-logo.png';
+import canvaLogo from '../assets/images/canva-logo.png';
 
 const Skills = () => {
     const professionalSkills = [
@@ -23,7 +27,11 @@ const Skills = () => {
 
     const tools = [
         { name: 'Google Chrome', logo: chromeLogo },
-        { name: 'VS Code', logo: vscodeLogo }
+        { name: 'VS Code', logo: vscodeLogo },
+        { name: 'Figma', logo: figmaLogo },
+        { name: 'Cursor', logo: cursorLogo },
+        { name: 'Anti Gravity', logo: antigravityLogo },
+        { name: 'Canva', logo: canvaLogo }
     ];
 
     return (
@@ -43,7 +51,7 @@ const Skills = () => {
                 <div className="tools-grid">
                     {tools.map((tool, index) => (
                         <div key={index} className="tool-item">
-                            <img src={tool.logo} alt={`${tool.name} logo`} className="tool-logo" />
+                            {tool.logo && <img src={tool.logo} alt={`${tool.name} logo`} className="tool-logo" />}
                             <span>{tool.name}</span>
                         </div>
                     ))}

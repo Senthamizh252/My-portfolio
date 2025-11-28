@@ -18,6 +18,9 @@ const Projects = () => {
                             {project.githubLink && (
                                 <a href={project.githubLink} className="btn-github" target="_blank" rel="noopener noreferrer">GitHub</a>
                             )}
+                            {project.driveLink && (
+                                <a href={project.driveLink} className="btn-github" target="_blank" rel="noopener noreferrer">Drive</a>
+                            )}
                         </div>
                     ))}
                 </div>
