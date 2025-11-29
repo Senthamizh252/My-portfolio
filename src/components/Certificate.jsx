@@ -25,8 +25,16 @@ const Certificate = () => {
         const hiddenElements = document.querySelectorAll('.fade-up, .zoom-in, .flip-in');
         hiddenElements.forEach((el) => observer.observe(el));
 
+        // Fallback: Ensure elements are shown even if observer misses them
+        const timeoutId = setTimeout(() => {
+            hiddenElements.forEach((el) => {
+                el.classList.add('show');
+            });
+        }, 500);
+
         return () => {
             hiddenElements.forEach((el) => observer.unobserve(el));
+            clearTimeout(timeoutId);
         };
     }, []);
 
@@ -67,16 +75,18 @@ const Certificate = () => {
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <img src={imageMap[cert.id]} alt={cert.title} className="certificate-image" />
-                            <h3 className="project-title">{cert.title}</h3>
-                            <a
-                                href={cert.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-github"
-                            >
-                                VIEW
-                            </a>
+                            <div className="card-content">
+                                <img src={imageMap[cert.id]} alt={cert.title} className="certificate-image" />
+                                <h3 className="project-title">{cert.title}</h3>
+                                <a
+                                    href={cert.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-github"
+                                >
+                                    VIEW
+                                </a>
+                            </div>
                         </div>
                     ))}
                 </div>
