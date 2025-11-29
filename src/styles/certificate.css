@@ -1,0 +1,104 @@
+/* Certificate Card Specific Animations */
+.certificate-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    /* Faster transform for tilt */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform-style: preserve-3d;
+    /* Enable 3D space */
+    will-change: transform;
+    animation: float-card 6s ease-in-out infinite;
+    /* Continuous floating */
+    opacity: 0;
+    /* Start hidden for entrance */
+}
+
+/* Stagger floating animation for variety */
+.certificate-card:nth-child(2n) {
+    animation-delay: 1s;
+}
+
+.certificate-card:nth-child(3n) {
+    animation-delay: 2s;
+}
+
+/* Pause floating on hover so tilt takes over cleanly */
+.certificate-card:hover {
+    animation-play-state: paused;
+    box-shadow: 0 20px 40px rgba(207, 181, 59, 0.3);
+    /* Stronger glow */
+    border-color: var(--primary-color);
+    z-index: 10;
+}
+
+/* Shine Effect */
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.certificate-card:hover::before {
+    left: 125%;
+    transition: 0.75s ease-in-out;
+}
+
+/* Image Hover Zoom */
+.certificate-card .certificate-image {
+    transition: transform 0.5s ease;
+    transform: translateZ(20px);
+    /* Pop image out in 3D */
+}
+
+.certificate-card:hover .certificate-image {
+    transform: translateZ(30px) scale(1.05);
+}
+
+/* Button Pulse on Hover */
+.certificate-card .btn-github {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    transform: translateZ(40px);
+    /* Pop button out even more */
+}
+
+/* Floating Animation Keyframes */
+@keyframes float-card {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Dramatic Entrance Animation */
+.flip-in {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-90deg) translateY(100px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy spring effect */
+}
+
+.flip-in.show {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) translateY(0);
+}
