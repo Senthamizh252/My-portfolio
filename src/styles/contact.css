@@ -1,0 +1,149 @@
+/* Contact Section Specific Animations */
+
+/* Contact Option Card Styles */
+.contact-option {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform-style: preserve-3d;
+    will-change: transform;
+    /* Floating animation */
+    animation: float-card 6s ease-in-out infinite;
+    background: rgba(44, 44, 108, 0.6);
+    /* Slightly transparent for glass effect */
+    backdrop-filter: blur(5px);
+}
+
+/* Stagger floating for variety */
+.contact-option:nth-child(2n) {
+    animation-delay: 1.5s;
+}
+
+/* Pause floating on hover */
+.contact-option:hover {
+    animation-play-state: paused;
+    box-shadow: 0 20px 40px rgba(77, 181, 255, 0.2);
+    /* Blue glow */
+    border-color: #4db5ff;
+    z-index: 10;
+}
+
+/* Shine Effect */
+.contact-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contact-option:hover::before {
+    left: 125%;
+    transition: 0.75s ease-in-out;
+}
+
+/* Icon Animation */
+.contact-option-icon {
+    transition: transform 0.3s ease;
+    transform: translateZ(20px);
+}
+
+.contact-option:hover .contact-option-icon {
+    transform: translateZ(30px) scale(1.1);
+    color: #4db5ff;
+}
+
+/* Text Pop-out */
+.contact-option h4,
+.contact-option h5,
+.contact-option a {
+    transform: translateZ(10px);
+    transition: transform 0.3s ease;
+}
+
+.contact-option:hover h4,
+.contact-option:hover h5,
+.contact-option:hover a {
+    transform: translateZ(20px);
+}
+
+/* Form Styles Enhancements */
+.contact-form {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    transition: all 0.3s ease;
+    border: 2px solid rgba(44, 44, 108, 0.8);
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    transform: scale(1.02);
+    border-color: #4db5ff;
+    box-shadow: 0 0 15px rgba(77, 181, 255, 0.2);
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.contact-form button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(77, 181, 255, 0.3);
+}
+
+/* Floating Animation Keyframes (Same as Certificate) */
+@keyframes float-card {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Dramatic Entrance Animation */
+.flip-in {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-90deg) translateY(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip-in.show {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) translateY(0);
+}
+
+/* Fade Up Animation (Ensure it overrides default if needed) */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,111 @@
+/* Certificate Card Specific Animations */
+.certificate-card {
+    position: relative;
+    overflow: visible;
+    /* Changed from hidden to visible to allow 3D pop-out if needed, or keep hidden if border radius matters */
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform-style: preserve-3d;
+    will-change: transform;
+    /* Removed opacity: 0 here, let flip-in handle it */
+    /* Removed animation here, moved to .card-content */
+}
+
+/* Inner content wrapper for floating animation */
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: float-card 6s ease-in-out infinite;
+}
+
+/* Stagger floating animation for variety */
+.certificate-card:nth-child(2n) .card-content {
+    animation-delay: 1s;
+}
+
+.certificate-card:nth-child(3n) .card-content {
+    animation-delay: 2s;
+}
+
+/* Pause floating on hover */
+.certificate-card:hover .card-content {
+    animation-play-state: paused;
+}
+
+.certificate-card:hover {
+    box-shadow: 0 20px 40px rgba(207, 181, 59, 0.3);
+    border-color: var(--primary-color);
+    z-index: 10;
+}
+
+/* Shine Effect - Keep on main card */
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.certificate-card:hover::before {
+    left: 125%;
+    transition: 0.75s ease-in-out;
+}
+
+/* Image Hover Zoom */
+.certificate-card .certificate-image {
+    transition: transform 0.5s ease;
+    transform: translateZ(20px);
+}
+
+.certificate-card:hover .certificate-image {
+    transform: translateZ(30px) scale(1.05);
+}
+
+/* Button Pulse on Hover */
+.certificate-card .btn-github {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    transform: translateZ(40px);
+}
+
+/* Floating Animation Keyframes */
+@keyframes float-card {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Dramatic Entrance Animation */
+.flip-in {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-90deg) translateY(100px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip-in.show {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) translateY(0);
+}
