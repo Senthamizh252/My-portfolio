@@ -7,7 +7,9 @@ export const projectsData = [
         technologies: ["React", "Node.js", "AI/ML", "MongoDB"],
         variant: "gold",
         buttonText: "DOWNLOAD",
-        githubLink: "https://www.figma.com/make/ivtwLMqlMSc092WPS2Iaez/Telemedicine-App-Design?node-id=0-4&t=mYmPpBzTQ7tl9njt-1"
+        githubLink: "https://www.figma.com/make/ivtwLMqlMSc092WPS2Iaez/Telemedicine-App-Design?node-id=0-4&t=mYmPpBzTQ7tl9njt-1",
+        image: "https://placehold.co/600x400?text=HEALON",
+        liveLink: "#"
     },
     {
         id: "routemate",
@@ -17,7 +19,9 @@ export const projectsData = [
         technologies: ["Flutter", "Firebase", "Google Maps API"],
         variant: "gold",
         driveLink: "https://drive.google.com/file/d/1b09sDzLKU8bUfUnHxcsVmFUORmkvinXQ/view?usp=drivesdk",
-        buttonText: "DOWNLOAD"
+        buttonText: "DOWNLOAD",
+        image: "https://placehold.co/600x400?text=ROUTEMATE",
+        liveLink: "#"
     },
     {
         id: "skillconnect",
@@ -27,7 +31,9 @@ export const projectsData = [
         technologies: ["React", "Express", "PostgreSQL"],
         variant: "default",
         buttonText: "Get Started",
-        githubLink: "https://github.com/Senthamizh252/skill-connect.git"
+        githubLink: "https://github.com/Senthamizh252/skill-connect.git",
+        image: "https://placehold.co/600x400?text=SKILLCONNECT",
+        liveLink: "#"
     },
     {
         id: "fashionista",
@@ -37,7 +43,9 @@ export const projectsData = [
         technologies: ["Vue.js", "Django", "Stripe API"],
         variant: "default",
         driveLink: "https://drive.google.com/file/d/16ar9Ou3rVO3vVXnY7Cily-0T7sxkRh0i/view?usp=drivesdk",
-        buttonText: "DOWNLOAD"
+        buttonText: "DOWNLOAD",
+        image: "https://placehold.co/600x400?text=FASHIONISTA",
+        liveLink: "#"
     },
     {
         id: "productivity-tracker",
@@ -47,6 +55,8 @@ export const projectsData = [
         technologies: ["Python", "Pandas", "Scikit-learn"],
         variant: "gold",
         buttonText: "DOWNLOAD",
-        githubLink: "https://github.com/Senthamizh252/student-productivity-tracker.git"
+        githubLink: "https://github.com/Senthamizh252/student-productivity-tracker.git",
+        image: "https://placehold.co/600x400?text=PRODUCTIVITY+TRACKER",
+        liveLink: "#"
     }
 ];
