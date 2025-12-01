@@ -33,7 +33,7 @@ const Contact = () => {
     return (
         <section id="contact" className="contact">
             <div className={`container fade-up ${isVisible ? 'show' : ''}`} ref={elementRef}>
-                <p className="section-description">I do receive your messages and will respond asap if the valid email is provided :)</p>
+
 
                 <div className="contact-container">
                     <div className="contact-options">
