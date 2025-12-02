@@ -45,62 +45,6 @@ body {
 body.night {
     background-color: #000;
     color: #fff;
-}
-
-body.day {
-    background-color: #fff;
-    color: #000;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navbar */
-.navbar {
-    position: fixed;
-    font-weight: 500;
-    transition: color var(--transition-speed);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary-color);
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-.bar.open:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.bar.open:nth-child(2) {
-    opacity: 0;
-}
-
-.bar.open:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
     justify-content: center;
     gap: 50px;
 }
