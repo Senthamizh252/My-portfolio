@@ -384,7 +384,11 @@ body.day {
     color: #cfb53b;
 }
 
-/* Contact Section Updates */
+.contact {
+    padding: 50px 0 30px 0;
+}
+
+
 .section-subtitle {
     text-align: center;
     font-size: 0.9rem;
@@ -1648,4 +1652,5 @@ body.day {
 .project-card.gold .btn-icon:hover {
     color: #fff;
 }
+
 
