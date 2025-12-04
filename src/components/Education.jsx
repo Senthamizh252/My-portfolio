@@ -13,7 +13,10 @@ const Education = () => {
                         <p>
                             First year Higher Secondary with a percentage of 87.9% in Rasi Matric Hr Sec School.
                         </p>
-                        <div className="year" style={{ marginTop: '20px' }}>2023-2024</div>
+                    </div>
+
+                    <div className="education-card">
+                        <div className="year">2023-2024</div>
                         <p>
                             Second year Higher Secondary with a percentage of 89.9% in Rasi Matric Hr Sec School.
                         </p>
