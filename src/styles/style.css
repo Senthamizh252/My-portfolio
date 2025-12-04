@@ -245,20 +245,6 @@ body.day {
     width: 100%;
     height: 10px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-.skill-bar {
-    height: 100%;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Background Effects */
-.background-effect {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
