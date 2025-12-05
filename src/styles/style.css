@@ -1720,7 +1720,7 @@ body.day {
     padding: 12px 20px;
     font-size: 0.9rem;
 }
-}
+
 
 /* Certificate Section */
 .certificate {
@@ -1800,7 +1800,9 @@ body.day {
     object-fit: contain;
     border-radius: 5px;
     margin-bottom: 15px;
-}/* CORRECTED PROJECTS SECTION STYLES - APPENDED */
+}
+
+/* CORRECTED PROJECTS SECTION STYLES - APPENDED */
 
 /* Projects Section */
 .projects-grid {
