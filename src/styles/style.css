@@ -1521,122 +1521,463 @@ body.day {
     color: #000;
 }
 
-.project-card.gold .btn-icon:hover {
-    color: #fff;
+.resume-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+}
 }
 
-/* RESTORED STYLES */
+/* Certificate Section */
+.certificate {
+    padding: 120px 0;
+    min-height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.certificate-content p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.btn-certificate {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 2px solid #8a2be2;
+    /* Purple border */
+    color: #8a2be2;
+    /* Purple text */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    /* Rounded button */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-certificate:hover {
+    background-color: #8a2be2;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    transform: translateY(-3px);
+}
+
+.days-code {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.skill-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.tool-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.certificate-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
 
 /* Projects Section */
 .projects-grid {
+    border-radius: 15px;
+    /* Rounded corners for the image itself */
+    transition: transform 0.5s ease;
+}
+
+.project-card-modern:hover .project-image-modern {
+    transform: scale(1.02);
+}
+
+.project-content-modern {
+    padding: 25px;
+    flex-grow: 1;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.project-title-modern {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.project-description-modern {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    /* Slate-400 */
+    margin-bottom: 25px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.project-footer-modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.tech-stack-modern {
+    display: flex;
+    gap: 10px;
+}
+
+.tech-icon-modern {
+    font-size: 1.2rem;
+    color: #64748b;
+    /* Slate-500 */
+    transition: color 0.3s ease;
+}
+
+.tech-icon-modern:hover {
+    color: var(--primary-color);
+}
+
+.project-links-modern {
+    display: flex;
+    align-items: center;
+}
+
+.btn-live {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a78bfa;
+    /* Light purple */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-live:hover {
+    color: #c4b5fd;
+    /* Lighter purple */
+}
+
+
+.project-links .btn-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Gold Project Card Variant */
+.project-card.gold {
+    background-color: #cfb53b;
+    color: #000;
+    border: none;
+}
+
+.project-card.gold .project-title {
+    color: #000;
+}
+
+.project-card.gold .project-description {
+    color: #1a1a1a;
+}
+
+.project-card.gold .tech-tag {
+    border-color: #000;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.project-card.gold .btn-icon {
+    color: #000;
+}
+
+.resume-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+}
+}
+
+/* Certificate Section */
+.certificate {
+    padding: 120px 0;
+    min-height: 60vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 20px;
-    border-radius: 0;
-    /* Reset */
+}
+
+.certificate-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.certificate-content p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.btn-certificate {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 2px solid #8a2be2;
+    /* Purple border */
+    color: #8a2be2;
+    /* Purple text */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 50px;
+    /* Rounded button */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-certificate:hover {
+    background-color: #8a2be2;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    transform: translateY(-3px);
+}
+
+.days-code {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.skill-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.tool-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.certificate-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}/* CORRECTED PROJECTS SECTION STYLES - APPENDED */
+
+/* Projects Section */
+.projects-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 100px 20px !important;
+    border-radius: 0 !important;
 }
 
 /* Modern Project Card Styles */
 .project-card-modern {
-    background-color: #0a0f1c;
-    border-radius: 24px;
-    overflow: visible;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    width: 380px;
-    max-width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #0a0f1c !important;
+    border-radius: 24px !important;
+    overflow: visible !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    height: 100% !important;
+    position: relative !important;
+    transform-style: preserve-3d !important;
+    width: 380px !important;
+    max-width: 100% !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
 .project-card-modern:hover {
-    transform: perspective(1000px) rotateX(5deg) translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: perspective(1000px) rotateX(5deg) translateY(-10px) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .visit-badge {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%) translateZ(50px);
-    background: #000;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    padding: 10px 28px;
-    border-radius: 30px;
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 100;
-    pointer-events: none;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1);
-    white-space: nowrap;
+    position: absolute !important;
+    top: -40px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateZ(50px) !important;
+    background: #000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    padding: 10px 28px !important;
+    border-radius: 30px !important;
+    opacity: 0 !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    z-index: 100 !important;
+    pointer-events: none !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.1) !important;
+    white-space: nowrap !important;
 }
 
 .visit-badge a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6) !important;
 }
 
 .visit-badge::after {
-    content: '';
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    width: 2px;
-    height: 40px;
-    background: linear-gradient(to bottom, #fff, transparent);
-    opacity: 0.8;
-    transform: translateX(-50%);
+    content: '' !important;
+    position: absolute !important;
+    bottom: -40px !important;
+    left: 50% !important;
+    width: 2px !important;
+    height: 40px !important;
+    background: linear-gradient(to bottom, #fff, transparent) !important;
+    opacity: 0.8 !important;
+    transform: translateX(-50%) !important;
 }
 
 .visit-badge::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
-    z-index: -1;
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 30px !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25) !important;
+    z-index: -1 !important;
 }
 
 .project-card-modern:hover .visit-badge {
-    opacity: 1;
-    top: -70px;
-    pointer-events: auto;
+    opacity: 1 !important;
+    top: -70px !important;
+    pointer-events: auto !important;
 }
 
 .project-image-wrapper {
-    width: 100%;
-    height: 230px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-
+    width: 100% !important;
+    height: 230px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
 }
 
 .project-image-modern {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.5s ease;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transition: transform 0.5s ease !important;
+}
+
+.project-content-modern {
+    padding: 25px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.project-title-modern {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+}
+
+.project-description-modern {
+    font-size: 0.95rem !important;
+    color: #94a3b8 !important;
+    margin-bottom: 25px !important;
+    line-height: 1.6 !important;
+    flex-grow: 1 !important;
+}
+
+.project-footer-modern {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: auto !important;
+}
+
+.tech-stack-modern {
+    display: flex !important;
+    gap: 10px !important;
+}
+
+.tech-icon-modern {
+    font-size: 1.2rem !important;
+    color: #64748b !important;
+    transition: color 0.3s ease !important;
+}
+
+.tech-icon-modern:hover {
+    color: var(--primary-color) !important;
+}
+
+.project-links-modern {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.btn-live {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: #a78bfa !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    transition: color 0.3s ease !important;
+}
+
+.btn-live:hover {
+    color: #c4b5fd !important;
+}
+
+.project-links .btn-icon:hover {
+    color: var(--primary-color) !important;
 }
