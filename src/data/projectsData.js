@@ -1,3 +1,5 @@
+import healonImg from '../assets/images/healon.jpg';
+
 export const projectsData = [
     {
         id: "healon",
@@ -8,7 +10,7 @@ export const projectsData = [
         variant: "gold",
         buttonText: "DOWNLOAD",
         githubLink: "https://www.figma.com/make/ivtwLMqlMSc092WPS2Iaez/Telemedicine-App-Design?node-id=0-4&t=mYmPpBzTQ7tl9njt-1",
-        image: "https://placehold.co/600x400?text=HEALON",
+        image: healonImg,
         liveLink: "#"
     },
     {
