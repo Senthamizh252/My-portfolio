@@ -27,6 +27,9 @@ const getTechIcon = (techName) => {
 const ProjectCard = ({ project }) => {
     return (
         <div className="project-card-modern">
+            <div className="visit-badge">
+                <a href={project.liveLink || project.githubLink || '#'} target="_blank" rel="noopener noreferrer">Visit</a>
+            </div>
             <div className="project-image-wrapper">
                 <img src={project.image} alt={project.title} className="project-image-modern" />
             </div>
