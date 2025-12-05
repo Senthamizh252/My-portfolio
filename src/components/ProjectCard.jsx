@@ -1,38 +1,63 @@
 import React from 'react';
 import '../styles/style.css';
 
+import { FaGithub, FaGoogleDrive, FaExternalLinkAlt, FaReact, FaNodeJs, FaPython, FaDatabase, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa';
+import { SiFlutter, SiFirebase, SiMongodb, SiPostgresql, SiDjango, SiPandas, SiScikitlearn, SiVite, SiExpress, SiStripe } from 'react-icons/si';
+
+const getTechIcon = (techName) => {
+    const name = techName.toLowerCase();
+    if (name.includes('react')) return <FaReact />;
+    if (name.includes('node')) return <FaNodeJs />;
+    if (name.includes('python')) return <FaPython />;
+    if (name.includes('mongo')) return <SiMongodb />;
+    if (name.includes('flutter')) return <SiFlutter />;
+    if (name.includes('firebase')) return <SiFirebase />;
+    if (name.includes('postgres')) return <SiPostgresql />;
+    if (name.includes('django')) return <SiDjango />;
+    if (name.includes('pandas')) return <SiPandas />;
+    if (name.includes('scikit')) return <SiScikitlearn />;
+    if (name.includes('express')) return <SiExpress />;
+    if (name.includes('stripe')) return <SiStripe />;
+    if (name.includes('html')) return <FaHtml5 />;
+    if (name.includes('css')) return <FaCss3Alt />;
+    if (name.includes('js') || name.includes('javascript')) return <FaJs />;
+    return <FaDatabase />; // Default icon
+};
+
 const ProjectCard = ({ project }) => {
     return (
-        <div className={`project-card ${project.variant || 'default'}`}>
-            <div className="project-image-container">
-                <img src={project.image} alt={project.title} className="project-image" />
-                <div className="project-overlay">
-                    <div className="project-links">
-                        {project.githubLink && (
-                            <a href={project.githubLink} className="btn-icon" target="_blank" rel="noopener noreferrer" title="View Code">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            </a>
-                        )}
-                        {project.driveLink && (
-                            <a href={project.driveLink} className="btn-icon" target="_blank" rel="noopener noreferrer" title="View Drive">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
-                            </a>
-                        )}
-                        {project.liveLink && project.liveLink !== '#' && (
-                            <a href={project.liveLink} className="btn-icon" target="_blank" rel="noopener noreferrer" title="Live Demo">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            </a>
-                        )}
-                    </div>
-                </div>
+        <div className="project-card-modern">
+            <div className="project-image-wrapper">
+                <img src={project.image} alt={project.title} className="project-image-modern" />
             </div>
-            <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="tech-stack">
-                    {project.technologies && project.technologies.map((tech, index) => (
-                        <span key={index} className="tech-tag">{tech}</span>
-                    ))}
+            <div className="project-content-modern">
+                <h3 className="project-title-modern">{project.title}</h3>
+                <p className="project-description-modern">{project.description}</p>
+
+                <div className="project-footer-modern">
+                    <div className="tech-stack-modern">
+                        {project.technologies && project.technologies.map((tech, index) => (
+                            <div key={index} className="tech-icon-modern" title={tech}>
+                                {getTechIcon(tech)}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="project-links-modern">
+                        {project.liveLink && project.liveLink !== '#' ? (
+                            <a href={project.liveLink} className="btn-live" target="_blank" rel="noopener noreferrer">
+                                Check Live Site <FaExternalLinkAlt className="link-icon" />
+                            </a>
+                        ) : project.githubLink ? (
+                            <a href={project.githubLink} className="btn-live" target="_blank" rel="noopener noreferrer">
+                                Check Code <FaGithub className="link-icon" />
+                            </a>
+                        ) : project.driveLink ? (
+                            <a href={project.driveLink} className="btn-live" target="_blank" rel="noopener noreferrer">
+                                View Drive <FaGoogleDrive className="link-icon" />
+                            </a>
+                        ) : null}
+                    </div>
                 </div>
             </div>
         </div>

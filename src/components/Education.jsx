@@ -31,6 +31,16 @@ const Education = () => {
                         <p>Sem 1 CGPA: 8.4/10</p>
                         <p>Sem 2 CGPA: 8.6/10</p>
                     </div>
+
+                    {/* Qualifications Card */}
+                    <div className="education-card">
+                        <div className="year">Qualifications</div>
+                        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', marginTop: '10px' }}>
+                            <li>Certified in Full Stack Development</li>
+                            <li>Proficient in React, Node.js, and Python</li>
+                            <li>Completed Data Structures and Algorithms course</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
