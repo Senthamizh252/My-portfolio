@@ -1928,6 +1928,74 @@ body.day {
     }
 }
 
+/* Enhancements for extra "animatic" feel */
+@keyframes shine {
+    0% {
+        transform: translateX(-150%) skewX(-15deg);
+    }
+
+    100% {
+        transform: translateX(150%) skewX(-15deg);
+    }
+}
+
+@keyframes float-badge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+    }
+}
+
+/* Apply Shine */
+.certificate-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-150%) skewX(-15deg);
+    transition: transform 0.5s;
+    pointer-events: none;
+}
+
+.certificate-card:hover .certificate-image-wrapper::after {
+    animation: shine 0.7s forwards;
+}
+
+/* Apply Float */
+.certificate-badge {
+    animation: float-badge 3s ease-in-out infinite;
+}
+
+/* Apply Pulse */
+.btn-certificate-view {
+    animation: pulse-glow 2s infinite;
+}
+
 /* CORRECTED PROJECTS SECTION STYLES - APPENDED */
 
 /* Projects Section */
