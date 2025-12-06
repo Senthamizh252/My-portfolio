@@ -198,34 +198,6 @@ body.day {
 .about-title-mobile {
     display: none;
     text-align: center;
-    margin-bottom: 2rem;
-}
-
-/* Skills Section */
-.skills {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.skills-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.skills-grid,
-.tools-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.skill-item,
-.tool-item {
-    background-color: rgba(30, 41, 59, 0.7);
-    padding: 15px 30px;
-    border-radius: 50px;
     color: var(--text-color);
     font-size: 1rem;
     font-weight: 600;
