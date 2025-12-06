@@ -1752,6 +1752,7 @@ body.day {
     margin: 0 auto;
     padding: 20px 0;
     /* Minimal padding */
+    perspective: 1000px;
 }
 
 /* Certificate Card - Premium & Animatic */
@@ -1782,8 +1783,9 @@ body.day {
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
     z-index: 1;
+    transform-style: preserve-3d;
 }
 
 /* Animated Gradient Border */
@@ -1810,24 +1812,55 @@ body.day {
 }
 
 .certificate-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-15px) scale(1.03) rotateX(5deg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .certificate-card:hover::before {
     opacity: 1;
 }
 
+/* Enable faster spin on hover */
+.certificate-card:hover::before,
 .certificate-card:hover::after {
-    opacity: 0.6;
+    animation-duration: 2s;
+    /* Faster spin */
 }
 
-/* Image Wrapper */
-.certificate-image-wrapper {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 18px 18px 0 0;
-    position: relative;
+/* Auto-Sheen Effect */
+@keyframes auto-sheen {
+
+    0%,
+    70% {
+        transform: translateX(-150%) skewX(-15deg);
+    }
+
+    100% {
+        transform: translateX(150%) skewX(-15deg);
+    }
+}
+
+.certificate-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-150%) skewX(-15deg);
+    transition: transform 0.5s;
+    pointer-events: none;
+    animation: auto-sheen 6s infinite;
+    /* Runs automatically every 6s */
+}
+
+/* Enhance hover to trigger shine immediately */
+.certificate-card:hover .certificate-image-wrapper::after {
+    animation: shine 0.7s forwards;
 }
 
 .certificate-image {
@@ -1842,6 +1875,7 @@ body.day {
 }
 
 /* Certificate Info */
+/* Certificate Info */
 .certificate-info {
     padding: 25px;
     text-align: center;
@@ -1855,14 +1889,30 @@ body.day {
     height: 100%;
 }
 
+@keyframes text-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .certificate-title {
     font-size: 1.4rem;
     font-weight: 700;
-    background: linear-gradient(to right, #fff, #cfb53b);
+    background: linear-gradient(270deg, #fff, #cfb53b, #fff, #8a2be2);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
+    animation: text-shimmer 4s ease infinite;
 }
 
 /* Verified Badge */
@@ -1879,6 +1929,7 @@ body.day {
     align-items: center;
     gap: 5px;
     z-index: 10;
+    animation: float-badge 3s ease-in-out infinite;
 }
 
 .badge-icon {
@@ -1907,6 +1958,7 @@ body.day {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
     align-self: center;
+    animation: pulse-glow 2s infinite;
 }
 
 .btn-certificate-view:hover {
