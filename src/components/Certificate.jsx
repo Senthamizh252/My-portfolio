@@ -17,18 +17,26 @@ const Certificate = () => {
             <div className="container">
 
                 <div className="projects-grid">
-                    {certificatesData.map((cert) => (
-                        <div key={cert.id} className="project-card">
-                            <img src={imageMap[cert.id]} alt={cert.title} className="certificate-image" />
-                            <h3 className="project-title">{cert.title}</h3>
-                            <a
-                                href={cert.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-github"
-                            >
-                                VIEW
-                            </a>
+                    {certificatesData.map((cert, index) => (
+                        <div
+                            key={cert.id}
+                            className="certificate-card"
+                            style={{ animationDelay: `${index * 0.2}s` }}
+                        >
+                            <div className="certificate-image-wrapper">
+                                <img src={imageMap[cert.id]} alt={cert.title} className="certificate-image" />
+                            </div>
+                            <div className="certificate-info">
+                                <h3 className="certificate-title">{cert.title}</h3>
+                                <a
+                                    href={cert.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-certificate-view"
+                                >
+                                    View Certificate
+                                </a>
+                            </div>
                         </div>
                     ))}
                 </div>
