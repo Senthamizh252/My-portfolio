@@ -23,6 +23,10 @@ const Certificate = () => {
                             className="certificate-card"
                             style={{ animationDelay: `${index * 0.2}s` }}
                         >
+                            <div className="certificate-badge">
+                                <span className="badge-icon">✔</span>
+                                <span className="badge-text">Verified</span>
+                            </div>
                             <div className="certificate-image-wrapper">
                                 <img src={imageMap[cert.id]} alt={cert.title} className="certificate-image" />
                             </div>

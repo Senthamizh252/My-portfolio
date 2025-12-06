@@ -208,6 +208,41 @@ body.day {
     justify-content: center;
 }
 
+/* Skills Section */
+.skills {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.skills-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-grid,
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.skill-item,
+.tool-item {
+    background-color: rgba(30, 41, 59, 0.7);
+    padding: 15px 30px;
+    border-radius: 50px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .skill-item:hover,
 .tool-item:hover {
     transform: translateY(-5px);
@@ -1719,91 +1754,165 @@ body.day {
     /* Minimal padding */
 }
 
+/* Certificate Card - Premium & Animatic */
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    }
+
+    100% {
+        --gradient-angle: 360deg;
+    }
+}
+
 .certificate-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(20, 20, 30, 0.9);
     border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.4s ease;
+    position: relative;
     width: 350px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+/* Animated Gradient Border */
+.certificate-card::before,
+.certificate-card::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    background: conic-gradient(from var(--gradient-angle),
+            #cfb53b,
+            #8a2be2,
+            #00d4ff,
+            #cfb53b);
+    border-radius: 22px;
+    animation: rotation 5s linear infinite;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-card::after {
+    filter: blur(20px);
+    opacity: 0.3;
 }
 
 .certificate-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
-    /* Purple glow */
-    border-color: rgba(138, 43, 226, 0.3);
 }
 
+.certificate-card:hover::before {
+    opacity: 1;
+}
+
+.certificate-card:hover::after {
+    opacity: 0.6;
+}
+
+/* Image Wrapper */
 .certificate-image-wrapper {
     width: 100%;
     height: 220px;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+    border-radius: 18px 18px 0 0;
+    position: relative;
 }
 
 .certificate-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Changed to cover for better aesthetics */
-    border-radius: 12px;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .certificate-card:hover .certificate-image {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
+/* Certificate Info */
 .certificate-info {
     padding: 25px;
     text-align: center;
+    background: #0f172a;
+    /* Card inner bg */
+    border-radius: 0 0 20px 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .certificate-title {
     font-size: 1.4rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #cfb53b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
+}
+
+/* Verified Badge */
+.certificate-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #cfb53b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+}
+
+.badge-icon {
+    color: #cfb53b;
+    font-size: 0.9rem;
+}
+
+.badge-text {
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.5px;
 }
 
+/* Button */
 .btn-certificate-view {
     display: inline-block;
-    padding: 10px 25px;
-    background: transparent;
-    border: 2px solid #8a2be2;
-    color: #8a2be2;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #8a2be2, #00d4ff);
+    color: #fff;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
     border-radius: 30px;
     text-decoration: none;
     transition: all 0.3s ease;
-    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
     align-self: center;
 }
 
 .btn-certificate-view:hover {
-    background: #8a2be2;
-    color: #fff;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+    filter: brightness(1.1);
 }
 
 /* Animations */
