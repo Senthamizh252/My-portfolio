@@ -24,11 +24,21 @@ const getTechIcon = (techName) => {
     return <FaDatabase />; // Default icon
 };
 
+// Helper function to get the primary link for a project
+const getPrimaryLink = (project) => {
+    if (project.liveLink && project.liveLink !== '#') return project.liveLink;
+    if (project.githubLink) return project.githubLink;
+    if (project.driveLink) return project.driveLink;
+    return '#';
+};
+
 const ProjectCard = ({ project }) => {
+    const primaryLink = getPrimaryLink(project);
+
     return (
         <div className="project-card-modern">
             <div className="visit-badge">
-                <a href={project.liveLink || project.githubLink || '#'} target="_blank" rel="noopener noreferrer">Visit</a>
+                <a href={primaryLink} target="_blank" rel="noopener noreferrer">Visit</a>
             </div>
             <div className="project-image-wrapper">
                 <img src={project.image} alt={project.title} className="project-image-modern" />
