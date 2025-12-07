@@ -63,20 +63,26 @@
 
 /* Contact Container */
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 900px;
+    display: grid;
+    grid-template-columns: 60% 35%;
+    gap: 5%;
+    max-width: 1200px;
     margin: 0 auto;
+    align-items: start;
 }
 
-/* Contact Options - Below the form in a row */
+/* Contact Options - 2 cards in first row, GitHub centered in second row */
 .contact-options {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Center GitHub card in second row */
+.contact-option:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 50%;
 }
 
 /* Contact Option Card - Animated */
@@ -99,13 +105,11 @@
 .contact-option {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(10px);
-    padding: 20px 18px;
+    padding: 12px 15px;
     border-radius: 16px;
     text-align: center;
     position: relative;
-    flex: 1;
-    min-width: 220px;
-    max-width: 280px;
+    width: 100%;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -150,9 +154,9 @@
 }
 
 .contact-option-icon {
-    width: 45px;
-    height: 45px;
-    margin: 0 auto 15px;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,27 +186,27 @@
 }
 
 .contact-option-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     stroke: #fff;
 }
 
 .contact-option h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: 600;
 }
 
 .contact-option h5 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #94a3b8;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     word-break: break-word;
 }
 
 .contact-option a {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     color: #00d4ff;
     text-decoration: none;
     font-weight: 600;
@@ -411,6 +415,25 @@
 }
 
 /* Responsive Design */
+@media (max-width: 968px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-options {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contact-option {
+        flex: 1;
+        min-width: 200px;
+        max-width: 280px;
+    }
+}
+
 @media (max-width: 768px) {
     .contact-title {
         font-size: 2.2rem;
