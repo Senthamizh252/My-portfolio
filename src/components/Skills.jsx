@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/style.css';
+import '../styles/skills.css';
+import useScrollAnimation from '../hooks/useScrollAnimation';
 import cppLogo from '../assets/images/cpp-logo.png';
 import javaScriptLogo from '../assets/images/javascript-logo.png';
 import nodejsLogo from '../assets/images/nodejs-logo.png';
@@ -15,6 +17,8 @@ import antigravityLogo from '../assets/images/antigravity-logo.png';
 import canvaLogo from '../assets/images/canva-logo.png';
 
 const Skills = () => {
+    const { elementRef, isVisible } = useScrollAnimation();
+
     const professionalSkills = [
         { name: 'C++', logo: cppLogo },
         { name: 'JavaScript', logo: javaScriptLogo },
@@ -36,7 +40,7 @@ const Skills = () => {
 
     return (
         <section id="skills" className="skills">
-            <div className="container">
+            <div className={`container ${isVisible ? 'show' : ''}`} ref={elementRef}>
                 <h2 className="section-title">Professional Skillset</h2>
                 <div className="skills-grid">
                     {professionalSkills.map((skill, index) => (

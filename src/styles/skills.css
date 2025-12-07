@@ -1,0 +1,48 @@
+/* ========================================
+   SKILLS SECTION - ANIMATED BORDERS ONLY
+   ======================================== */
+
+/* Animated Gradient Border for Skill Items */
+@property --gradient-angle-skill {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation-skill {
+    0% {
+        --gradient-angle-skill: 0deg;
+    }
+
+    100% {
+        --gradient-angle-skill: 360deg;
+    }
+}
+
+.skill-item,
+.tool-item {
+    position: relative;
+    z-index: 1;
+}
+
+.skill-item::before,
+.tool-item::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    background: conic-gradient(from var(--gradient-angle-skill),
+            rgba(207, 181, 59, 0.3),
+            rgba(0, 212, 255, 0.3),
+            rgba(138, 43, 226, 0.3),
+            rgba(207, 181, 59, 0.3));
+    border-radius: 52px;
+    animation: rotation-skill 5s linear infinite;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.skill-item:hover::before,
+.tool-item:hover::before {
+    opacity: 0.8;
+}
