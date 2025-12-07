@@ -1,0 +1,282 @@
+/* ========================================
+   EDUCATION SECTION - ANIMATED LIKE CERTIFICATES
+   ======================================== */
+
+/* Education Section */
+.education {
+    padding: 60px 0;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.education-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    perspective: 1000px;
+}
+
+/* Education Card - Premium & Animatic */
+@property --gradient-angle-edu {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation-edu {
+    0% {
+        --gradient-angle-edu: 0deg;
+    }
+
+    100% {
+        --gradient-angle-edu: 360deg;
+    }
+}
+
+.education-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    z-index: 1;
+    transform-style: preserve-3d;
+    padding: 30px;
+    min-height: 350px;
+}
+
+/* Animated Gradient Border */
+.education-card::before,
+.education-card::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    background: conic-gradient(from var(--gradient-angle-edu),
+            rgba(207, 181, 59, 0.3),
+            rgba(0, 212, 255, 0.3),
+            rgba(138, 43, 226, 0.3),
+            rgba(207, 181, 59, 0.3));
+    border-radius: 22px;
+    animation: rotation-edu 5s linear infinite;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.education-card::after {
+    filter: blur(20px);
+    opacity: 0.2;
+}
+
+.education-card:hover {
+    transform: translateY(-15px) scale(1.03) rotateX(5deg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.education-card:hover::before {
+    opacity: 0.7;
+}
+
+/* Enable faster spin on hover */
+.education-card:hover::before,
+.education-card:hover::after {
+    animation-duration: 2s;
+}
+
+/* Education Badge (Achievement) */
+.education-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #cfb53b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+    animation: float-badge 3s ease-in-out infinite;
+}
+
+.education-badge .badge-icon {
+    font-size: 0.9rem;
+}
+
+.education-badge .badge-text {
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Education Content */
+.education-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.education-year {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #cfb53b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+@keyframes text-shimmer-edu {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.education-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(270deg, #fff, #cfb53b, #fff, #00d4ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    animation: text-shimmer-edu 4s ease infinite;
+}
+
+.education-institution {
+    font-size: 0.95rem;
+    color: #8a2be2;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.education-description {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.detail-item {
+    font-size: 0.85rem;
+    color: #cfb53b;
+    font-weight: 600;
+    padding-left: 15px;
+    position: relative;
+}
+
+.detail-item::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #cfb53b;
+}
+
+.education-qualifications {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.education-qualifications li {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.education-qualifications li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+/* Shine Effect on Hover */
+.education-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.education-card:hover::after {
+    left: 125%;
+    transition: 0.75s ease-in-out;
+}
+
+/* Responsive Education Section */
+@media (max-width: 768px) {
+    .education-grid {
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .education-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-card {
+        padding: 25px;
+        min-height: 300px;
+    }
+
+    .education-title {
+        font-size: 1.2rem;
+    }
+
+    .education-badge {
+        top: 10px;
+        right: 10px;
+        padding: 4px 10px;
+    }
+}
