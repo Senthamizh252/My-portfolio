@@ -4,8 +4,8 @@
 
 /* Contact Section */
 .contact {
-    padding: 80px 0;
-    min-height: 100vh;
+    padding: 60px 0 40px 0;
+    min-height: auto;
     display: flex;
     align-items: center;
     position: relative;
@@ -15,7 +15,7 @@
 /* Contact Header */
 .contact-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     animation: fadeInDown 0.8s ease;
 }
 
@@ -32,14 +32,14 @@
 }
 
 .contact-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, #cfb53b, #00d4ff, #8a2be2);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     animation: gradient-shift 3s ease infinite;
 }
 
@@ -56,25 +56,26 @@
 }
 
 .contact-subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #94a3b8;
     font-weight: 400;
 }
 
 /* Contact Container */
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* Contact Options */
+/* Contact Options - Below the form in a row */
 .contact-options {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -98,13 +99,13 @@
 .contact-option {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(10px);
-    padding: 30px 25px;
-    border-radius: 20px;
+    padding: 20px 18px;
+    border-radius: 16px;
     text-align: center;
     position: relative;
     flex: 1;
-    min-width: 200px;
-    max-width: 250px;
+    min-width: 220px;
+    max-width: 280px;
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -149,9 +150,9 @@
 }
 
 .contact-option-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,22 +182,22 @@
 }
 
 .contact-option-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     stroke: #fff;
 }
 
 .contact-option h4 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 600;
 }
 
 .contact-option h5 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #94a3b8;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     word-break: break-word;
 }
 
@@ -233,7 +234,7 @@
 .contact-form {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(10px);
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -255,20 +256,20 @@
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     position: relative;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 18px 20px;
+    padding: 14px 18px;
     border-radius: 12px;
     background: rgba(15, 23, 42, 0.8);
     border: 2px solid rgba(255, 255, 255, 0.1);
     color: #fff;
     font-family: var(--font-main);
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     resize: none;
 }
@@ -295,9 +296,9 @@
 
 /* Form Status Messages */
 .form-status {
-    padding: 15px 20px;
+    padding: 12px 18px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 600;
     text-align: center;
     animation: slideIn 0.3s ease;
@@ -330,10 +331,10 @@
 /* Submit Button - Premium Design */
 .btn-contact-submit {
     width: 100%;
-    padding: 18px 40px;
+    padding: 15px 35px;
     background: linear-gradient(135deg, #cfb53b, #00d4ff);
     color: #000;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;

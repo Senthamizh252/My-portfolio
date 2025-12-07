@@ -94,25 +94,6 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-container">
-                    <div className="contact-options">
-                        {contactOptions.map((option, index) => (
-                            <article
-                                key={option.id}
-                                className="contact-option"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                                <div className="contact-option-icon">
-                                    {option.icon}
-                                </div>
-                                <h4>{option.title}</h4>
-                                <h5>{option.value}</h5>
-                                <a href={option.link} target="_blank" rel="noreferrer">
-                                    {option.linkText}
-                                </a>
-                            </article>
-                        ))}
-                    </div>
-
                     <form ref={form} onSubmit={sendEmail} className="contact-form">
                         <div className="form-group">
                             <input
@@ -135,7 +116,7 @@ const Contact = () => {
                         <div className="form-group">
                             <textarea
                                 name="message"
-                                rows="6"
+                                rows="4"
                                 placeholder="Your Message"
                                 required
                                 disabled={isSubmitting}
@@ -169,6 +150,25 @@ const Contact = () => {
                             )}
                         </button>
                     </form>
+
+                    <div className="contact-options">
+                        {contactOptions.map((option, index) => (
+                            <article
+                                key={option.id}
+                                className="contact-option"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                                <div className="contact-option-icon">
+                                    {option.icon}
+                                </div>
+                                <h4>{option.title}</h4>
+                                <h5>{option.value}</h5>
+                                <a href={option.link} target="_blank" rel="noreferrer">
+                                    {option.linkText}
+                                </a>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
