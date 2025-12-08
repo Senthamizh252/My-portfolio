@@ -62,11 +62,6 @@ const Hero = () => {
             <div className={`container hero-container ${isVisible ? 'show' : ''}`} ref={elementRef}>
                 <div className="hero-content">
                     <div className="hero-text">
-                        <div className="hero-badge">
-                            <span className="badge-dot"></span>
-                            <span>Available for opportunities</span>
-                        </div>
-
                         <h1 className="hero-title">
                             {typedText}
                             <span className="cursor-blink">|</span>
@@ -92,20 +87,13 @@ const Hero = () => {
                         </div>
 
                         <div className="hero-cta">
-                            <a href="#contact" className="btn-primary">
-                                <span>Get In Touch</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                            <a href="/resume" className="btn-secondary">
+                            <a href="https://drive.google.com/file/d/1MAyRVxo-9WG7Qv0iRgdigAm7mNFz91zy/view?usp=drivesdk" className="btn-secondary" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                     <polyline points="7 10 12 15 17 10"></polyline>
                                     <line x1="12" y1="15" x2="12" y2="3"></line>
                                 </svg>
-                                <span>Download CV</span>
+                                <span>View CV</span>
                             </a>
                         </div>
 

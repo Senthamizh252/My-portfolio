@@ -1,4 +1,8 @@
 import healonImg from '../assets/images/healon.jpg';
+import routemateImg from '../assets/images/routemate.png';
+import fashionistaImg from '../assets/images/fashionista.png';
+import skillconnectImg from '../assets/images/skillconnect.png';
+import productivityTrackerImg from '../assets/images/productivity.png';
 
 export const projectsData = [
     {
@@ -22,7 +26,7 @@ export const projectsData = [
         variant: "gold",
         driveLink: "https://drive.google.com/file/d/1b09sDzLKU8bUfUnHxcsVmFUORmkvinXQ/view?usp=drivesdk",
         buttonText: "DOWNLOAD",
-        image: "https://placehold.co/600x400?text=ROUTEMATE",
+        image: routemateImg,
         liveLink: "#"
     },
     {
@@ -34,7 +38,7 @@ export const projectsData = [
         variant: "default",
         buttonText: "Get Started",
         githubLink: "https://github.com/Senthamizh252/skill-connect.git",
-        image: "https://placehold.co/600x400?text=SKILLCONNECT",
+        image: skillconnectImg,
         liveLink: "#"
     },
     {
@@ -46,7 +50,7 @@ export const projectsData = [
         variant: "default",
         driveLink: "https://drive.google.com/file/d/16ar9Ou3rVO3vVXnY7Cily-0T7sxkRh0i/view?usp=drivesdk",
         buttonText: "DOWNLOAD",
-        image: "https://placehold.co/600x400?text=FASHIONISTA",
+        image: fashionistaImg,
         liveLink: "#"
     },
     {
@@ -58,7 +62,7 @@ export const projectsData = [
         variant: "gold",
         buttonText: "DOWNLOAD",
         githubLink: "https://github.com/Senthamizh252/student-productivity-tracker.git",
-        image: "https://placehold.co/600x400?text=PRODUCTIVITY+TRACKER",
+        image: productivityTrackerImg,
         liveLink: "#"
     }
 ];
